@@ -1,0 +1,61 @@
+/*
+
+I've included a class called .background-image that is how you can perfectly fill a webpage with a background image.
+(It's a pain in the butt to google this. I included the best link I found in the solution.)
+
+Then on your HTML file, create a div that wraps your entire content on the landing page and give it this class.
+
+Example:
+
+<div class="background-image">
+   <div class="container">
+      <!-- More html here -->
+   </div>
+</div>
+
+*/
+
+.background-image {
+  /* https://css-tricks.com/perfect-full-page-background-image/ */
+  background: url("../images/background-landing.jpg") no-repeat center center
+    fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.thumbnail {
+  width: 200px;
+  height: 200px;
+}
+
+.thumb-img {
+  object-fit: cover;
+  overflow: hidden;
+  height: 150px;
+  width: 150px;
+}
+
+.thumb-img-lg {
+  object-fit: cover;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+}
+
+.collection-link {
+  color: #52535f;
+  text-decoration: none;
+}
+.collection-link:hover {
+  color: #2f2f36;
+  text-decoration: underline;
+}
+.collecion-link:focus,
+.collecion-link.focus {
+  text-decoration: underline;
+}
+.collection-link:disabled,
+.collecion-link.disabled {
+  color: #6c757d;
+  pointer-events: none;
+}
