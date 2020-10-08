@@ -38,18 +38,18 @@ $red-900: #290505;
 
 $grays: ();
 $grays: map-merge(
-  (
-    "100": $gray-100,
-    "200": $gray-200,
-    "300": $gray-300,
-    "400": $gray-400,
-    "500": $gray-500,
-    "600": $gray-600,
-    "700": $gray-700,
-    "800": $gray-800,
-    "900": $gray-900,
-  ),
-  $grays
+   (
+      "100": $gray-100,
+      "200": $gray-200,
+      "300": $gray-300,
+      "400": $gray-400,
+      "500": $gray-500,
+      "600": $gray-600,
+      "700": $gray-700,
+      "800": $gray-800,
+      "900": $gray-900,
+   ),
+   $grays
 );
 
 $blue: $blue-600;
@@ -58,14 +58,14 @@ $gray: $gray-600;
 
 $colors: ();
 $colors: map-merge(
-  (
-    "blue": $blue,
-    "red": $red,
-    "white": $white,
-    "gray": $gray,
-    "gray-dark": $gray-800,
-  ),
-  $colors
+   (
+      "blue": $blue,
+      "red": $red,
+      "white": $white,
+      "gray": $gray,
+      "gray-dark": $gray-800,
+   ),
+   $colors
 );
 
 $primary: $gray;
@@ -77,15 +77,15 @@ $dark: $gray-800;
 
 $theme-colors: ();
 $theme-colors: map-merge(
-  (
-    "primary": $primary,
-    "secondary": $secondary,
-    "success": $success,
-    "danger": $danger,
-    "light": $light,
-    "dark": $dark,
-  ),
-  $theme-colors
+   (
+      "primary": $primary,
+      "secondary": $secondary,
+      "success": $success,
+      "danger": $danger,
+      "light": $light,
+      "dark": $dark,
+   ),
+   $theme-colors
 );
 
 // SPACING
@@ -96,31 +96,31 @@ $theme-colors: map-merge(
 $spacer: 1rem; // 16px in most browsers
 $spacers: ();
 $spacers: map-merge(
-  (
-    0: 0px,
-    1: 4px,
-    2: 8px,
-    3: 12px,
-    4: 16px,
-    5: 24px,
-    6: 32px,
-    7: 48px,
-    8: 64px,
-    9: 128px,
-  ),
-  $spacers
+   (
+      0: 0px,
+      1: 4px,
+      2: 8px,
+      3: 12px,
+      4: 16px,
+      5: 24px,
+      6: 32px,
+      7: 48px,
+      8: 64px,
+      9: 128px,
+   ),
+   $spacers
 );
 
 $paragraph-margin-bottom: 0;
 
 // FONTS
 
-@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Noto+Sans:wght@400;700&family=Noto+Serif&display=swap");
-
-$font-family-sans-serif: "Noto Sans", sans-serif, "Apple Color Emoji",
-  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$font-family-serif: "Noto Serif", serif;
-$font-family-brand: "Fira Sans";
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@700&display=swap");
+$font-family-sans-serif: "Merriweather", sans-serif, "Apple Color Emoji",
+   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-serif: "Merriweather", serif;
+$font-family-brand: "Heebo";
 
 $font-family-base: $font-family-sans-serif;
 
@@ -227,15 +227,15 @@ $input-line-height-lg: $line-height-base;
 $text-height: 24px;
 
 $input-height: add(
-  $text-height,
-  add($input-padding-y * 2, $border-width * 2),
-  false
+   $text-height,
+   add($input-padding-y * 2, $border-width * 2),
+   false
 );
 $input-height-sm: add(
-  $text-height,
-  add($input-padding-y-sm * 2, $border-width * 2, false)
+   $text-height,
+   add($input-padding-y-sm * 2, $border-width * 2, false)
 );
 $input-height-lg: add(
-  $text-height,
-  add($input-padding-y-lg * 2, $border-width * 2, false)
+   $text-height,
+   add($input-padding-y-lg * 2, $border-width * 2, false)
 );

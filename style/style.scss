@@ -16,46 +16,122 @@ Example:
 */
 
 .background-image {
-  /* https://css-tricks.com/perfect-full-page-background-image/ */
-  background: url("../images/background-landing.jpg") no-repeat center center
-    fixed;
-  background-size: cover;
-  min-height: 100vh;
+   /* https://css-tricks.com/perfect-full-page-background-image/ */
+   background: url("../images/background-landing.jpg") no-repeat center center
+      fixed;
+   background-size: cover;
+   min-height: 100vh;
 }
 
 .thumbnail {
-  width: 200px;
-  height: 200px;
+   width: 200px;
+   height: 200px;
 }
 
-.thumb-img {
-  object-fit: cover;
-  overflow: hidden;
-  height: 150px;
-  width: 150px;
+// .thumb-img {
+//    object-fit: cover;
+//    overflow: hidden;
+//    height: 150px;
+//    width: 150px;
+// }
+
+.img-square {
+   position: relative;
+   overflow: hidden;
+   padding-bottom: 100%;
+}
+.img-square img {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+   overflow: hidden;
 }
 
-.thumb-img-lg {
-  object-fit: cover;
-  overflow: hidden;
-  height: 200px;
-  width: 200px;
-}
+// .thumb-img-lg {
+//    object-fit: cover;
+//    overflow: hidden;
+//    height: 200px;
+//    width: 200px;
+// }
 
 .collection-link {
-  color: #52535f;
-  text-decoration: none;
+   color: #52535f;
+   text-decoration: none;
 }
 .collection-link:hover {
-  color: #2f2f36;
-  text-decoration: underline;
+   color: #2f2f36;
+   text-decoration: underline;
 }
 .collecion-link:focus,
 .collecion-link.focus {
-  text-decoration: underline;
+   text-decoration: underline;
 }
 .collection-link:disabled,
 .collecion-link.disabled {
-  color: #6c757d;
-  pointer-events: none;
+   color: #6c757d;
+   pointer-events: none;
+}
+
+.remove-link {
+   color: #a20404;
+   text-decoration: none;
+}
+.remove-link:hover {
+   color: #750505;
+   text-decoration: underline;
+}
+.remove-link:focus,
+.remove-link.focus {
+   text-decoration: underline;
+}
+.remove-link:disabled,
+.collecion-link.disabled {
+   color: #6c757d;
+   pointer-events: none;
+}
+
+.font-family-brand {
+   font-family: $font-family-brand;
+}
+
+#logo-text {
+   @include media-breakpoint-only(xs) {
+      font-size: 40px;
+   }
+   @include media-breakpoint-only(sm) {
+      font-size: 64px;
+   }
+
+   @include media-breakpoint-up(md) {
+      font-size: 64px;
+   }
+}
+
+#rotate-right {
+   transform: rotate(270deg);
+}
+
+#rotate-left {
+   transform: rotate(90deg);
+}
+
+.tag-text {
+   font-size: 12px;
+}
+
+.file-name-text {
+   font-size: 12px;
+}
+
+@include media-breakpoint-between(xs, sm) {
+   .btn {
+      @include button-size(
+         $input-btn-padding-y-sm,
+         $input-btn-padding-x-sm,
+         $font-size-sm,
+         $line-height-sm,
+         $btn-border-radius-sm
+      );
+   }
 }
