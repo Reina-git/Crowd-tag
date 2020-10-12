@@ -12,30 +12,71 @@
                <div class="row">
                   <!-- top banner-->
                   <div class="col-12 mt-6">
-                     <img
-                        src="/images/Logo_Louie_Greco.png"
-                        class="mt-n6"
-                        width="64px"
-                     />
-                     <h1
-                        class="d-inline ml-4 font-family-brand font-weight-bold"
-                        id="logo-text"
-                     >
-                        Crowd Tag
-                     </h1>
-                     <div class="float-right mt-1 mt-sm-6">
-                        <a href="/library-log-in.html" class="btn btn-link">Log out</a>
+                     <a href="index.html" class="Logo-link">
+                        <img
+                           src="/images/noun_shutter_1063959.svg"
+                           class="mt-n2 logo"
+                        />
+                        <h1
+                           class="d-inline ml-2 font-family-brand"
+                           id="logo-text"
+                        >
+                           Crowd Tag
+                        </h1>
+                     </a>
+                     <div class="float-right">
+                        <a href="/library-log-in.html" class="collection-link"
+                           >Log out</a
+                        >
                      </div>
                   </div>
                </div>
                <div class="row">
-                  <div class="col mt-4 mb-0 d-flex">
-                     <h2 class="font-weight-bold">Suffragists</h2>
-                     <a
-                        href=""
-                        class="font-weight-bold lead collection-link ml-auto"
-                        >Add photos</a
+                  <div class="col mt-6 mb-0">
+                     <a href="/admin-collections.html" class="collection-link">
+                        <img
+                           src="icons/icon-arrow-thick-left-circle.svg"
+                           width="20px"
+                           class="mb-1 primary"
+                        />
+                        Back to collections</a
                      >
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col mt-4 mb-0">
+                     <p class="text-primary lead d-inline">Suffragists</p>
+                     <a href=""
+                        ><img
+                           src="icons/icon-edit.svg"
+                           width="15px"
+                           class="mb-1"
+                        />
+                     </a>
+
+                     <button
+                        class="text-primary btn btn-link float-right"
+                        id="add-photo-btn"
+                     >
+                        <img
+                           src="icons/icon-add.svg"
+                           width="20px"
+                           class="mb-1 primary"
+                        />
+                        Add photos
+                     </button>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div id="photo-url" class="d-none">
+                        <input
+                           class="form-control form-control-sm mt-3"
+                           type="text"
+                           placeholder="Add photo url"
+                        />
+                     </div>
                   </div>
                </div>
                <!-- Collection Name -->
@@ -52,16 +93,16 @@
                            />
                         </div>
                      </a>
-                     <p class="file-name-text text-break">a143-3a-17_40944652100_o.jpg</p>
-                     <a href="" class="remove-link tag-text">
+                     <p class="file-name-text text-break ml-1">
+                        a143-3a-17_40944652100_o.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
                         <img
                            class=""
                            src="/icons/icon-trash.svg"
                            alt=""
-                           width="20px"
-                        />
-
-                        Remove
+                           width="15px"
+                        />Remove
                      </a>
                   </div>
                   <!--Thumbnail end-->
@@ -76,22 +117,22 @@
                            />
                         </div>
                      </a>
-                     <p class="file-name-text text-break">
+                     <p class="file-name-text text-break ml-1">
                         aksdjfh;aksdhj-akjdhflkajhdf-.jpg
                      </p>
-                     <a href="" class="remove-link tag-text">
+                     <a href="" class="remove-link tag-text-remove">
                         <img
                            class=""
                            src="/icons/icon-trash.svg"
                            alt=""
-                           width="20px"
+                           width="15px"
                         />
-
                         Remove
+                     </a>
                   </div>
                   <!--Thumbnail end-->
                   <!--Thumbnail start-->
-                 
+
                   <div class="col-lg-3 col-md-4 col-6 mb-5">
                      <a href="/image.html">
                         <div class="img-square">
@@ -102,15 +143,15 @@
                            />
                         </div>
                      </a>
-                     <p class="file-name-text text-break">
-                        thisisthelongestnameicanthinkofiwonderwhatwillhappen
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
                      </p>
-                     <a href="" class="remove-link tag-text">
+                     <a href="" class="remove-link tag-text-remove">
                         <img
                            class=""
                            src="/icons/icon-trash.svg"
                            alt=""
-                           width="20px"
+                           width="15px"
                         />
 
                         Remove
@@ -128,6 +169,18 @@
                            />
                         </div>
                      </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
+                     </a>
                   </div>
                   <!--Thumbnail end-->
                   <!--Thumbnail start-->
@@ -141,15 +194,15 @@
                            />
                         </div>
                      </a>
-                     <p class="file-name-text text-break">
+                     <p class="file-name-text text-break ml-1">
                         textbreakthisisthelongestnameicanthinkofiwonderwhatwillhappen
                      </p>
-                     <a href="" class="remove-link tag-text">
+                     <a href="" class="remove-link tag-text-remove">
                         <img
                            class=""
                            src="/icons/icon-trash.svg"
                            alt=""
-                           width="20px"
+                           width="15px"
                         />
 
                         Remove
@@ -167,6 +220,19 @@
                            />
                         </div>
                      </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+
+                        Remove
+                     </a>
                   </div>
                   <!--Thumbnail end-->
                   <!--Thumbnail start-->
@@ -179,6 +245,18 @@
                               alt=""
                            />
                         </div>
+                     </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
                      </a>
                   </div>
                   <!--Thumbnail end-->
@@ -193,6 +271,18 @@
                            />
                         </div>
                      </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
+                     </a>
                   </div>
                   <!--Thumbnail end-->
                   <!--Thumbnail start-->
@@ -205,6 +295,18 @@
                               alt=""
                            />
                         </div>
+                     </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
                      </a>
                   </div>
                   <!--Thumbnail end-->
@@ -219,6 +321,18 @@
                            />
                         </div>
                      </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
+                     </a>
                   </div>
                   <!--Thumbnail end-->
                   <!--Thumbnail start-->
@@ -231,6 +345,18 @@
                               alt=""
                            />
                         </div>
+                     </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
                      </a>
                   </div>
                   <!--Thumbnail end-->
@@ -245,6 +371,18 @@
                            />
                         </div>
                      </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
+                     </a>
                   </div>
                   <!--Thumbnail end-->
                   <!--Thumbnail start-->
@@ -257,6 +395,18 @@
                               alt=""
                            />
                         </div>
+                     </a>
+                     <p class="file-name-text text-break ml-1">
+                        filename-2020.jpg
+                     </p>
+                     <a href="" class="remove-link tag-text-remove">
+                        <img
+                           class=""
+                           src="/icons/icon-trash.svg"
+                           alt=""
+                           width="15px"
+                        />
+                        Remove
                      </a>
                   </div>
                   <!--Thumbnail end-->

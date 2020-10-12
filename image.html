@@ -12,23 +12,39 @@
                <div class="row">
                   <!-- top banner-->
                   <div class="col-12 mt-6">
-                     <img
-                        src="/images/Logo_Louie_Greco.png"
-                        class="mt-n6"
-                        width="64px"
-                     />
-                     <h1
-                        class="d-inline ml-4 font-family-brand font-weight-bold"
-                        id="logo-text"
-                     >
-                        Crowd Tag
-                     </h1>
-                     <div class="float-right mt-1 mt-md-6">
-                        <a href="/log-in.html" class="btn btn-link">Log in</a>
-                        <a href="/library-log-in.html" class="btn btn-link"
+                     <a href="index.html" class="Logo-link">
+                        <img
+                           src="/images/noun_shutter_1063959.svg"
+                           class="mt-n2 logo"
+                        />
+                        <h1
+                           class="d-inline ml-2 font-family-brand"
+                           id="logo-text"
+                        >
+                           Crowd Tag
+                        </h1>
+                     </a>
+                     <div class="float-right mt-2">
+                        <a href="/log-in.html" class="collection-link pr-3"
+                           >Log in</a
+                        >
+                        <a href="/library-log-in.html" class="collection-link"
                            >Library log in</a
                         >
                      </div>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col mt-6 mb-n2">
+                     <a href="/collection.html" class="collection-link">
+                        <img
+                           src="icons/icon-arrow-thick-left-circle.svg"
+                           width="20px"
+                           class="mb-1 primary"
+                        />
+                        Back to collection</a
+                     >
                   </div>
                </div>
                <!-- Main Image-->
@@ -67,44 +83,68 @@
                         />
                      </div>
                   </div>
-
-                  <!-- Input-->
+               </div>
+               <!-- Input-->
+               <div class="row">
                   <div class="col-12 mt-5">
-                     <p>Type a tag then press enter.</p>
+                     <p class="text-pimary">
+                        Please log in to begin tagging photos.
+                     </p>
+                     <a href="/log-in.html" class="btn btn-primary">Log in</a>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="col-12 mt-5">
+                     <p class="text-primary">Type a tag then press enter.</p>
                      <input
-                        class="form-control form-control-sm"
+                        class="form-control form-control-sm mt-3"
                         type="text"
                         placeholder="Add a tag"
+                        id="tag-input"
                      />
-                     <div class="mt-4">
-                        <a href="" width="20px" class="btn btn-link tag-text">
-                           Elizabeth Cady Stanton<img
-                              src="icons/icon-close.svg"
-                              width="20px"
-                           />
+                  </div>
+               </div>
+               <p class="float-right mt-2 mb-0 text-muted">
+                  <span id="tag-char-count">0</span>/240
+               </p>
+               <div class="clearfix"></div>
+               <div class="row">
+                  <div class="col-12">
+                     <!-- <div class="mt-0">
+                        <div class="row">
+                           <div class="col-12"> -->
+                     <div class="d-inline-flex mr-2">
+                        <p class="tag-text">Elizabeth Cady Stanton</p>
+                        <a href="" width="20px" class="collection-link">
+                           <img src="icons/icon-close.svg" width="20px" />
                         </a>
-
-                        <a href="" width="20px" class="btn btn-link tag-text">
-                           Women's Suffrag<img
-                              src="icons/icon-close.svg"
-                              width="20px"
-                           />
+                     </div>
+                     <div class="d-inline-flex mr-2">
+                        <p class="tag-text">Women's Suffrag</p>
+                        <a href="" width="20px" class="collection-link">
+                           <img src="icons/icon-close.svg" width="20px" />
                         </a>
-
-                        <a href="" width="20px" class="btn btn-link tag-text">
-                           1900's<img src="icons/icon-close.svg" width="20px" />
+                     </div>
+                     <div class="d-inline-flex">
+                        <p class="tag-text">United States of America</p>
+                        <a href="" width="20px" class="collection-link">
+                           <img src="icons/icon-close.svg" width="20px" />
                         </a>
+                     </div>
 
-                        <a href="" width="20px" class="btn btn-link tag-text">
-                           United States of America<img
-                              src="icons/icon-close.svg"
-                              width="20px"
-                           />
+                     <div class="d-inline-flex mr-2">
+                        <p class="tag-text">1900's</p>
+                        <a href="" width="20px" class="collection-link">
+                           <img src="icons/icon-close.svg" width="20px" />
                         </a>
                      </div>
                   </div>
-                  <!-- Tags-->
                </div>
+               <!-- </div>
+                  </div>
+               </div> -->
+               <!-- Tags-->
             </div>
          </div>
       </div>
