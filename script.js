@@ -41,21 +41,27 @@ $("#letsGoButton").click(function () {
       $("#email-sign-up").removeClass("is-invalid");
       // console.log(`The trimmed and normalized email is ${localEmail}.`);
    }
-
+   // If there is no password then error message and red input box
    if (passwordInput.length === 0) {
       $("#enterPassword").removeClass("d-none");
       $("#password-sign-up").addClass("is-invalid");
+
+      // If the password is too short, then error message and red box but not other error messages
    } else if (passwordInput.length < 9 && passwordInput.length > 0) {
       $("#passwordLenth").removeClass("d-none");
       $("#password-sign-up").addClass("is-invalid");
       $("#enterPassword").addClass("d-none");
       $("#differentPassword").addClass("d-none");
+
+      // if the password is the same as the first part/ local of the email address and the local part
+      // is longer than 4 characters then error message and red box but not all other errors
    } else if (
       lowerCasedPassword.includes(localEmail) &&
       localEmail.length >= 4
    ) {
       $("#differentPassword").removeClass("d-none");
       $("#password-sign-up").addClass("is-invalid");
+      $("#passwordLenth").addClass("d-none");
    } else {
       $("#enterPassword").addClass("d-none");
       $("#passwordLenth").addClass("d-none");
