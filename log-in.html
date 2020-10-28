@@ -52,49 +52,32 @@
                               <input
                                  style=""
                                  type="text"
-                                 id="email-sign-up"
+                                 id="sign-up-email-input"
                                  class="form-control"
                                  aria-label="Sizing example input"
                                  aria-describedby="inputGroup-sizing-default"
                               />
                            </div>
                            <p
-                              class="text-danger lead mt-2 d-none"
-                              id="enterEmail"
-                           >
-                              Please enter your email address.
-                           </p>
+                              class="text-danger lead mt-2"
+                              id="sign-up-email-error"
+                           ></p>
                            <p class="text-muted mt-3 lead">Create a password</p>
 
                            <div class="input-group mb-3 mt-2">
                               <input
                                  type="text"
                                  class="form-control"
-                                 class="form-control .is-invalid"
-                                 id="password-sign-up"
+                                 id="sign-up-password-input"
                                  aria-label="Sizing example input"
                                  aria-describedby="inputGroup-sizing-default"
                               />
                            </div>
                            <p
-                              class="text-danger lead mt-2 d-none"
-                              id="passwordLenth"
-                           >
-                              Your password must be at least 9 characters.
-                           </p>
-                           <p
-                              class="text-danger lead mt-2 d-none"
-                              id="enterPassword"
-                           >
-                              Please create a password.
-                           </p>
-                           <p
-                              class="text-danger lead mt-2 d-none"
-                              id="differentPassword"
-                           >
-                              All or part of your email address cannot be used
-                              in your password.
-                           </p>
+                              class="lead mt-2 text-danger"
+                              id="sign-up-password-error"
+                           ></p>
+
                            <button
                               href="/image.html"
                               class="btn btn-primary btn-block mt-5"
@@ -120,6 +103,7 @@
                               class="form-control"
                               aria-label="Sizing example input"
                               aria-describedby="inputGroup-sizing-default"
+                              id="email-input"
                            />
                         </div>
 
@@ -131,12 +115,17 @@
                               class="form-control"
                               aria-label="Sizing example input"
                               aria-describedby="inputGroup-sizing-default"
+                              id="password-input"
                            />
                         </div>
 
-                        <a href="/image.html" class="btn btn-primary mt-5"
-                           >Login!</a
+                        <button
+                           href="/image.html"
+                           class="btn btn-primary mt-5"
+                           id="login-button"
                         >
+                           Login!
+                        </button>
                      </div>
                   </div>
                </div>
@@ -148,5 +137,11 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
       defer
    ></script>
+   <script src="/dbUsers.js" defer></script>
+   <script src="/allInsecurePasswords.js" defer></script>
+   <script src="/mostInsecurePasswords.js" defer></script>
+   <script src="/secondMostInsecurePasswords.js" defer></script>
+   <script src="/getPasswordError.js" defer></script>
    <script src="/script.js" defer></script>
+   <!-- <script src="loginScripts.js" defer></script> -->
 </html>

@@ -14,58 +14,88 @@ $("#add-photo-btn").click(function () {
 
 let tagInputChar = 0;
 
-$("#tag-input").keypress(function () {
-   console.log("let's add 1");
-   tagInputChar += 1;
+$("#tag-input").keyup(function (e) {
+   // get the text from the textarea
+   const tag = e.target.value;
+   // check the length of the text
+   const tagLength = tag.length;
 
-   console.log("Total inputted chars: ", tagInputChar);
-   $("#tag-char-count").html(tagInputChar);
+   if (tagLength > 100) {
+      $("#tag-char-count").addClass("text-danger");
+      $("#tag-char-count").removeClass("text-muted");
+   } else {
+      $("#tag-char-count").addClass("text-muted");
+   }
+
+   // update the character counter on the page
+   $("#tag-char-count").html(tagLength);
 });
 
 $("#letsGoButton").click(function () {
-   const emailInput = $("#email-sign-up").val();
-   const passwordInput = $("#password-sign-up").val();
-   const lowerCasedPassword = passwordInput.toLowerCase();
-   const trimmedEmail = emailInput.trim();
-   const lowerCasedEmail = trimmedEmail.toLowerCase();
-   const delimiter = `@`;
-   const indexOfEmail = lowerCasedEmail.indexOf(delimiter);
-   const localEmail = emailInput.slice(0, indexOfEmail);
-   // console.log(`the local part of ${emailInput} is ${localEmail}.`);
+   const emailInput = $("#sign-up-email-input").val();
+   const email = emailInput.trim().toLowerCase();
+   const password = $("#sign-up-password-input").val();
+   const passwordError = getPasswordError(password, email);
 
-   if (emailInput.length < 1) {
-      $("#enterEmail").removeClass("d-none");
-      $("#email-sign-up").addClass("is-invalid");
+   if (passwordError !== "") {
+      showError("#sign-up-password", passwordError);
    } else {
-      $("#enterEmail").addClass("d-none");
-      $("#email-sign-up").removeClass("is-invalid");
-      // console.log(`The trimmed and normalized email is ${localEmail}.`);
+      hideError("#sign-up-password", passwordError);
    }
-   // If there is no password then error message and red input box
-   if (passwordInput.length === 0) {
-      $("#enterPassword").removeClass("d-none");
-      $("#password-sign-up").addClass("is-invalid");
 
-      // If the password is too short, then error message and red box but not other error messages
-   } else if (passwordInput.length < 9 && passwordInput.length > 0) {
-      $("#passwordLenth").removeClass("d-none");
-      $("#password-sign-up").addClass("is-invalid");
-      $("#enterPassword").addClass("d-none");
-      $("#differentPassword").addClass("d-none");
-
-      // if the password is the same as the first part/ local of the email address and the local part
-      // is longer than 4 characters then error message and red box but not all other errors
-   } else if (
-      lowerCasedPassword.includes(localEmail) &&
-      localEmail.length >= 4
-   ) {
-      $("#differentPassword").removeClass("d-none");
-      $("#password-sign-up").addClass("is-invalid");
-      $("#passwordLenth").addClass("d-none");
+   const emailError = getEmailError(emailInput);
+   if (emailError !== "") {
+      showError("#sign-up-email", emailError);
    } else {
-      $("#enterPassword").addClass("d-none");
-      $("#passwordLenth").addClass("d-none");
-      $("#differentPassword").addClass("d-none");
-      $("#password-sign-up").removeClass("is-invalid");
+      hideError("#sign-up-email", emailError);
    }
+
+   let whenButtonClicked = new Date(Date.now());
+   whenButtonClicked = new Date(2020, 3, 1); //uncomment to test that the date is working.
+   const year = whenButtonClicked.getFullYear();
+   const month = whenButtonClicked.getMonth() + 1;
+   const day = whenButtonClicked.getDate();
+
+   const yyyy = String(year);
+   const unpaddedMonth = String(month);
+   const unpaddedDay = String(day);
+
+   function padLeft(str) {
+      // let str = "";
+      if (str.length < 2) {
+         str = 0 + str;
+      } else {
+         str = str;
+      }
+      return str;
+   }
+   const dd = padLeft(unpaddedDay);
+   const mm = padLeft(unpaddedMonth);
+
+   const results = yyyy + mm + dd;
+   const createdAt = Number(results);
+   console.log(createdAt);
 });
+
+function getEmailError(emailInput) {
+   if (emailInput.length === 0) {
+      return "Please enter your email address.";
+   } else {
+      return "";
+   }
+}
+
+function showError(element, message) {
+   // showError("#sign-up-password", passwordError);
+   $(`${element}-error`).html(message);
+   $(`${element}-input`).addClass("is-invalid");
+
+   console.log(element);
+}
+
+function hideError(element, message) {
+   $(`${element}-error`).html(message);
+   $(`${element}-input`).removeClass("is-invalid");
+
+   // console.log(message);
+}
