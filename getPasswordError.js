@@ -3,7 +3,7 @@ function getPasswordError(password, email) {
    const localEmail = splitEmail[0];
 
    const unacceptablePasswords = getUnacceptablePasswords();
-   console.log(unacceptablePasswords);
+   // console.log(unacceptablePasswords);
 
    if (password.length === 0) {
       return "Please create a password.";
@@ -27,68 +27,115 @@ function getUnacceptablePasswords() {
       ...mostInsecurePasswords,
       ...secondMostInsecurePasswords,
    ].flat();
-   const allUniqPasswords = [...new Set(allPasswords)];
-   const firstPasswords = allUniqPasswords.slice(
+   // const allUniqPasswords = [...new Set(allPasswords)];
+   const firstPasswords = allPasswords.slice(
       0,
-      allUniqPasswords.indexOf("skywalker")
+      allPasswords.indexOf("skywalker")
    );
-   const secondPasswords = allUniqPasswords.slice(
-      allUniqPasswords.indexOf("skywalker") + 1,
-      allUniqPasswords.indexOf("obama2016")
+   const secondPasswords = allPasswords.slice(
+      allPasswords.indexOf("skywalker") + 1,
+      allPasswords.indexOf("obama2016")
    );
-   const thirdPasswords = allUniqPasswords.slice(
-      allUniqPasswords.indexOf("obama2016") + 1
+   const thirdPasswords = allPasswords.slice(
+      allPasswords.indexOf("obama2016") + 1
    );
    const firstAndSecondPassowords = firstPasswords.concat(secondPasswords);
    const nonBooleanPasswords = firstAndSecondPassowords.concat(thirdPasswords);
    //    const password = [];
    let stringsAndNumbersPasswords = [];
 
-   for (let i = 0; i < nonBooleanPasswords.length; i++) {
-      const password = nonBooleanPasswords[i];
+   // for (let i = 0; i < nonBooleanPasswords.length; i++) {
+   //    const password = nonBooleanPasswords[i];
+   //    if (typeof password === "boolean") {
+   //       // console.log("Yes");
+   //    } else {
+   //       stringsAndNumbersPasswords = stringsAndNumbersPasswords.concat(
+   //          password
+   //       );
+   //    }
+   // }
+   // nonBooleanPasswords.forEach(function (password) {
+   //    if (typeof password === "boolean") {
+   //       //  console.log("Yes");
+   //    } else {
+   //       stringsAndNumbersPasswords = stringsAndNumbersPasswords.concat(
+   //          password
+   //       );
+   //    }
+   // });
+   nonBooleanPasswords.forEach((password) => {
       if (typeof password === "boolean") {
-         // console.log("Yes");
+         //  console.log("Yes");
       } else {
          stringsAndNumbersPasswords = stringsAndNumbersPasswords.concat(
             password
          );
       }
-   }
+   });
 
    let stringPasswords = [];
 
-   for (let i = 0; i < stringsAndNumbersPasswords.length; i++) {
-      const password = stringsAndNumbersPasswords[i];
+   stringsAndNumbersPasswords.forEach((password) => {
       const passwordAsString = String(password);
       stringPasswords = stringPasswords.concat(passwordAsString);
-   }
+   });
    // console.log("These are the string passwords:", stringPasswords);
    let reversePasswords = [];
-   // make a list of passwords with characters reversed
-   for (let i = 0; i < stringPasswords.length; i++) {
-      const password = stringPasswords[i];
-      // turns a string into an array of characters
+
+   stringPasswords.forEach((password) => {
       const passwordChars = password.split("");
-      const copyOfPasswordChars = [...passwordChars];
-      // reverses an array
-      const reversePasswordChars = copyOfPasswordChars.reverse();
-      // turns an array into a string
-      const reversePassword = reversePasswordChars.join("");
-      // combines each string into an array of strings as it passes through the for loop
+      const copyOfPasswordChars = [...passwordChars]; // reverses an array
+      const reversePasswordChars = copyOfPasswordChars.reverse(); // turns an array into a string
+      const reversePassword = reversePasswordChars.join(""); // combines each string into an array of strings as it passes through the for loop
       reversePasswords = reversePasswords.concat(reversePassword);
-   }
+   });
    // combines the new list of reversed passwords with the old list
    const reverseAndForwardPasswords = stringPasswords.concat(reversePasswords);
 
    let normalizedPasswords = [];
-
-   for (let i = 0; i < reverseAndForwardPasswords.length; i++) {
-      const normalizedPassword = reverseAndForwardPasswords[i].toLowerCase();
+   reverseAndForwardPasswords.forEach((password) => {
+      const normalizedPassword = password.toLowerCase();
       normalizedPasswords = normalizedPasswords.concat(normalizedPassword);
-   }
-   const unacceptablePasswords = [...new Set(normalizedPasswords)];
+   });
+   const revFowardAndNormalizedPasswords = [...new Set(normalizedPasswords)];
+   // console.log(revFowardAndNormalizedPasswords);
 
-   //    console.log(allUnacceptablePasswords);
+   const stringInsecurePasswords = allInsecurePasswords.map(
+      (allInsecurePassword) => allInsecurePassword.text
+   );
+
+   // console.log(stringInsecurePasswords);
+
+   const combinedStringPasswords = stringInsecurePasswords.concat(
+      reverseAndForwardPasswords
+   );
+   //  {console.log(combinedStringPasswords);
+
+   const longPasswords = combinedStringPasswords.filter((password) => {
+      return password.length >= 9;
+   });
+
+   // console.log(longPasswords);
+
+   const unacceptablePasswords = [...new Set(longPasswords)];
+
+   const isEveryPWLong = unacceptablePasswords.every((password) => {
+      return password.length >= 9;
+   });
+
+   const isPWQwerty = unacceptablePasswords.some((password) => {
+      return password === "qwerty";
+   });
+
+   // console.log(
+   //    "Is the password qwerty on the unacceptable password list?",
+   //    isPWQwerty
+   // );
+   // console.log(
+   //    "Are all the passwords on the unacceptable password list at least 9 characters long?",
+   //    isEveryPWLong
+   // );
+   // console.log(unacceptablePasswords);
 
    return unacceptablePasswords;
 }
