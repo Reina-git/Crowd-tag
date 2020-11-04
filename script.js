@@ -190,8 +190,13 @@ function getId() {
 }
 
 function getEmailError(emailInput) {
+   const emailPattern = /^\w.*@[a-zA-Z\d][\w-]+\.[a-zA-Z]{2,}$/;
+   const isValidEmail = "";
+   // const isValidEmail = emailPattern.test(email);
    if (emailInput.length === 0) {
       return "Please enter your email address.";
+   } else if (emailPattern.test(emailInput) === false) {
+      return "Please enter a valid email address.";
    } else {
       return "";
    }
